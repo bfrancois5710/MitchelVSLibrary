@@ -11,9 +11,9 @@ let running=false
 let score=0
 let speed=6
 
-const jumpSound=new Audio("audio/jump.wav")
-const hitSound=new Audio("audio/hit.wav")
-const gameoverSound=new Audio("audio/gameover.wav")
+const jumpSound=new Audio("jump.wav")
+const hitSound=new Audio("hit.wav")
+const gameoverSound=new Audio("gameover.wav")
 
 const playerImg = new Image()
 playerImg.src = "player"
@@ -40,20 +40,25 @@ const t=types[Math.floor(Math.random()*types.length)]
 obstacles.push({x:canvas.width+50,y:310,w:120,h:120,type:t})
 }
 
-setInterval(()=>{if(running)spawn()},1400)
+let lastJump = 0
 
 function jump(){
-if(!player.jumping){
-player.vy=-16
-player.jumping=true
-jumpSound.currentTime=0
-jumpSound.play()
+    const now = Date.now()
+    if(!player.jumping && now - lastJump > 150){
+        player.vy = -16
+        player.jumping = true
+        jumpSound.currentTime = 0
+        jumpSound.play()
+        lastJump = now
+    }
 }
 }
 
 document.addEventListener("keydown",e=>{if(e.code==="Space")jump()})
-canvas.addEventListener("touchstart",jump)
-
+canvas.addEventListener("touchstart", function(e){
+    e.preventDefault()  // empêche le double déclenchement du navigateur
+    jump()
+}, {passive: false})
 function update(){
 
 player.y+=player.vy
