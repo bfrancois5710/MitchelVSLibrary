@@ -1,5 +1,5 @@
 
-# Sauve qui peu
+# MedhiMichell VS Library
 
 Runner simple inspiré de Mario / Temple Run.
 Personnage : MedhiMitchel.
