@@ -30,14 +30,14 @@ scissorsImg.src = "scissors"
 const chairImg = new Image()
 chairImg.src = "chair"
 
-const player={x:120,y:300,w:40,h:40,vy:0,jumping:false}
+const player={x:120,y:300,w:120,h:120,vy:0,jumping:false}
 
 let obstacles=[]
 
 function spawn(){
 const types=["book","paper","scissors","chair"]
 const t=types[Math.floor(Math.random()*types.length)]
-obstacles.push({x:canvas.width+50,y:310,w:40,h:40,type:t})
+obstacles.push({x:canvas.width+50,y:310,w:120,h:120,type:t})
 }
 
 setInterval(()=>{if(running)spawn()},1400)
@@ -60,7 +60,7 @@ player.y+=player.vy
 player.vy+=0.9
 
 if(player.y>=300){
-player.y=300
+player.y=250
 player.jumping=false
 }
 
