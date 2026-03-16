@@ -13,6 +13,21 @@ const jumpSound=new Audio("audio/jump.wav")
 const hitSound=new Audio("audio/hit.wav")
 const gameoverSound=new Audio("audio/gameover.wav")
 
+const playerImg = new Image()
+playerImg.src = "player"
+
+const bookImg = new Image()
+bookImg.src = "book"
+
+const paperImg = new Image()
+paperImg.src = "paper"
+
+const scissorsImg = new Image()
+scissorsImg.src = "scissors"
+
+const chairImg = new Image()
+chairImg.src = "chair"
+
 const player={x:120,y:300,w:40,h:40,vy:0,jumping:false}
 
 let obstacles=[]
@@ -69,16 +84,18 @@ ctx.fillStyle="#444"
 ctx.fillRect(0,350,canvas.width,70)
 
 ctx.fillStyle="#00ffd0"
-ctx.fillRect(player.x,player.y,player.w,player.h)
+ctx.drawImage(playerImg,player.x,player.y,player.w,player.h)
 
 obstacles.forEach(o=>{
 
-if(o.type==="book")ctx.fillStyle="red"
-if(o.type==="paper")ctx.fillStyle="white"
-if(o.type==="scissors")ctx.fillStyle="yellow"
-if(o.type==="chair")ctx.fillStyle="orange"
+let img
 
-ctx.fillRect(o.x,o.y,o.w,o.h)
+if(o.type==="book") img = bookImg
+if(o.type==="paper") img = paperImg
+if(o.type==="scissors") img = scissorsImg
+if(o.type==="chair") img = chairImg
+
+ctx.drawImage(img,o.x,o.y,o.w,o.h)
 
 })
 
