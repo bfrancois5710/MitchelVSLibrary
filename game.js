@@ -69,7 +69,7 @@ const now = Date.now()
 
 if(!player.jumping && now-lastJump>150){
 
-player.vy = -16
+player.vy = -22
 player.jumping = true
 
 jumpSound.currentTime = 0
@@ -95,7 +95,7 @@ jump()
 function update(){
 
 player.y += player.vy
-player.vy += 0.9
+player.vy += 0.6
 
 if(player.y>=260){
 player.y=260
