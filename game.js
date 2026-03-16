@@ -41,10 +41,9 @@ obstacles.push({x:canvas.width+50,y:310,w:120,h:120,type:t})
 }
 
 let lastJump = 0
-
-function jump(){
+function jump() {
     const now = Date.now()
-    if(!player.jumping && now - lastJump > 150){
+    if (!player.jumping && now - lastJump > 150) {
         player.vy = -16
         player.jumping = true
         jumpSound.currentTime = 0
@@ -53,12 +52,17 @@ function jump(){
     }
 }
 }
+// clavier PC
+document.addEventListener("keydown", e => {
+    if (e.code === "Space") jump()
+})
 
-document.addEventListener("keydown",e=>{if(e.code==="Space")jump()})
-canvas.addEventListener("touchstart", function(e){
-    e.preventDefault()  // empêche le double déclenchement du navigateur
+// tactile mobile
+canvas.addEventListener("touchstart", e => {
+    e.preventDefault()  // empêche le scroll
     jump()
 }, {passive: false})
+
 function update(){
 
 player.y+=player.vy
@@ -104,6 +108,8 @@ if(o.type==="book") img = bookImg
 if(o.type==="paper") img = paperImg
 if(o.type==="scissors") img = scissorsImg
 if(o.type==="chair") img = chairImg
+if(o.type==="guard") img = guardImg
+
 
 ctx.drawImage(img,o.x,o.y,o.w,o.h)
 
