@@ -9,9 +9,9 @@ let running = false
 let score = 0
 let speed = 6
 
-const jumpSound = new Audio("audio/jump.wav")
-const hitSound = new Audio("audio/hit.wav")
-const gameoverSound = new Audio("audio/gameover.wav")
+const jumpSound = new Audio(jump.wav")
+const hitSound = new Audio(hit.wav")
+const gameoverSound = new Audio(gameover.wav")
 
 const bg = new Image()
 bg.src = "library"
