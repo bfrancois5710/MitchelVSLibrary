@@ -1,8 +1,17 @@
 
-# MedhiMichell VS Library
+# Sauve qui peu
 
-Runner simple inspiré de Mario / Temple Run.
-Personnage : MedhiMitchel.
+Mini runner avec MedhiMitchel.
 
-Controle :
-Espace ou écran tactile.
+## Lancer
+
+Ouvre index.html.
+
+## Contrôles
+
+PC : espace
+Mobile : toucher écran
+
+## Modifier les sprites
+
+Remplace les images dans le dossier sprites.
