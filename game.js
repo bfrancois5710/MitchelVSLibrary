@@ -1,6 +1,8 @@
 
 const canvas=document.getElementById("game")
 const ctx=canvas.getContext("2d")
+const bg = new Image()
+bg.src = "library"
 
 canvas.width=window.innerWidth
 canvas.height=420
@@ -80,9 +82,12 @@ function draw(){
 
 ctx.clearRect(0,0,canvas.width,canvas.height)
 
+// fond bibliothèque
+ctx.drawImage(bg,0,0,canvas.width,canvas.height)
+
 ctx.fillStyle="#444"
 ctx.fillRect(0,350,canvas.width,70)
-
+  
 ctx.fillStyle="#00ffd0"
 ctx.drawImage(playerImg,player.x,player.y,player.w,player.h)
 
