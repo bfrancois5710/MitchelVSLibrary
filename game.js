@@ -35,7 +35,7 @@ let obstacles=[]
 function spawn(){
 const types=["book","paper","scissors","chair"]
 const t=types[Math.floor(Math.random()*types.length)]
-obstacles.push({x:canvas.width+50,y:300,w:40,h:40,type:t})
+obstacles.push({x:canvas.width+50,y:400,w:40,h:40,type:t})
 }
 
 setInterval(()=>{if(running)spawn()},1400)
