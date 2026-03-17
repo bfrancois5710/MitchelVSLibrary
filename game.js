@@ -28,14 +28,14 @@ const jumpSound=new Audio("audio/jump.wav")
 const hitSound=new Audio("audio/hit.wav")
 const gameoverSound=new Audio("audio/gameover.wav")
 
-const player={x:120,y:300,w:40,h:40,vy:0,jumping:false}
+const player={x:120,y:300,w:96,h:96,vy:0,jumping:false}
 
 let obstacles=[]
 
 function spawn(){
 const types=["book","paper","scissors","chair"]
 const t=types[Math.floor(Math.random()*types.length)]
-obstacles.push({x:canvas.width+50,y:310,w:40,h:40,type:t})
+obstacles.push({x:canvas.width+50,y:310,w:96,h:96,type:t})
 }
 
 setInterval(()=>{if(running)spawn()},1400)
