@@ -5,6 +5,21 @@ const ctx=canvas.getContext("2d")
 canvas.width=window.innerWidth
 canvas.height=420
 
+const playerImg = new Image()
+playerImg.src = "player.png"
+
+const bookImg = new Image()
+bookImg.src = "book.png"
+
+const paperImg = new Image()
+paperImg.src = "paper.png"
+
+const scissorsImg = new Image()
+scissorsImg.src = "scissors.png"
+
+const chairImg = new Image()
+chairImg.src = "chair.png"
+
 let running=false
 let score=0
 let speed=6
@@ -69,8 +84,7 @@ ctx.fillStyle="#444"
 ctx.fillRect(0,350,canvas.width,70)
 
 ctx.fillStyle="#00ffd0"
-ctx.fillRect(player.x,player.y,player.w,player.h)
-
+ctx.drawImage(playerImg,player.x,player.y,player.w,player.h)
 obstacles.forEach(o=>{
 
 if(o.type==="book")ctx.fillStyle="red"
@@ -78,7 +92,14 @@ if(o.type==="paper")ctx.fillStyle="white"
 if(o.type==="scissors")ctx.fillStyle="yellow"
 if(o.type==="chair")ctx.fillStyle="orange"
 
-ctx.fillRect(o.x,o.y,o.w,o.h)
+let img
+
+if(o.type==="book") img = bookImg
+if(o.type==="paper") img = paperImg
+if(o.type==="scissors") img = scissorsImg
+if(o.type==="chair") img = chairImg
+
+ctx.drawImage(img,o.x,o.y,o.w,o.h)
 
 })
 
