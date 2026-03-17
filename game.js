@@ -14,22 +14,22 @@ const hitSound = new Audio("audio/hit.wav")
 const gameoverSound = new Audio("audio/gameover.wav")
 
 const bg = new Image()
-bg.src = "sprites/library.png"
+bg.src = "library"
 
 const playerImg = new Image()
-playerImg.src = "sprites/player.png"
+playerImg.src = "player"
 
 const bookImg = new Image()
-bookImg.src = "sprites/book.png"
+bookImg.src = "book"
 
 const paperImg = new Image()
-paperImg.src = "sprites/paper.png"
+paperImg.src = "paper"
 
 const scissorsImg = new Image()
-scissorsImg.src = "sprites/scissors.png"
+scissorsImg.src = "scissors"
 
 const chairImg = new Image()
-chairImg.src = "sprites/chair.png"
+chairImg.src = "chair"
 
 const player = {
 x:120,
