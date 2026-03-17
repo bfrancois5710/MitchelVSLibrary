@@ -1,17 +1,8 @@
 
 # Sauve qui peu
 
-Mini runner avec MedhiMitchel.
+Runner simple inspiré de Mario / Temple Run.
+Personnage : MedhiMitchel.
 
-## Lancer
-
-Ouvre index.html.
-
-## Contrôles
-
-PC : espace
-Mobile : toucher écran
-
-## Modifier les sprites
-
-Remplace les images dans le dossier sprites.
+Controle :
+Espace ou écran tactile.
