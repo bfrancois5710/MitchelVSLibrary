@@ -42,7 +42,7 @@ setInterval(()=>{if(running)spawn()},1400)
 
 function jump(){
 if(!player.jumping){
-player.vy=-16
+player.vy=-19
 player.jumping=true
 jumpSound.currentTime=0
 jumpSound.play()
