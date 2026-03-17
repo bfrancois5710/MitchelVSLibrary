@@ -9,27 +9,27 @@ let running = false
 let score = 0
 let speed = 6
 
-const jumpSound = new Audio(jump.wav")
-const hitSound = new Audio(hit.wav")
-const gameoverSound = new Audio(gameover.wav")
+const jumpSound = new Audio("audio/jump.wav")
+const hitSound = new Audio("audio/hit.wav")
+const gameoverSound = new Audio("audio/gameover.wav")
 
 const bg = new Image()
-bg.src = "library"
+bg.src = "sprites/library.png"
 
 const playerImg = new Image()
-playerImg.src = "player"
+playerImg.src = "sprites/player.png"
 
 const bookImg = new Image()
-bookImg.src = "book"
+bookImg.src = "sprites/book.png"
 
 const paperImg = new Image()
-paperImg.src = "paper"
+paperImg.src = "sprites/paper.png"
 
 const scissorsImg = new Image()
-scissorsImg.src = "scissors"
+scissorsImg.src = "sprites/scissors.png"
 
 const chairImg = new Image()
-chairImg.src = "chair"
+chairImg.src = "sprites/chair.png"
 
 const player = {
 x:120,
@@ -69,7 +69,7 @@ const now = Date.now()
 
 if(!player.jumping && now-lastJump>150){
 
-player.vy = -19
+player.vy = -16
 player.jumping = true
 
 jumpSound.currentTime = 0
@@ -95,7 +95,7 @@ jump()
 function update(){
 
 player.y += player.vy
-player.vy += 0.6
+player.vy += 0.9
 
 if(player.y>=260){
 player.y=260
