@@ -35,7 +35,7 @@ let obstacles=[]
 function spawn(){
 const types=["book","paper","scissors","chair"]
 const t=types[Math.floor(Math.random()*types.length)]
-obstacles.push({x:canvas.width+50,y:310,w:40,h:40,type:t})
+obstacles.push({x:canvas.width+50,y:300,w:40,h:40,type:t})
 }
 
 setInterval(()=>{if(running)spawn()},1400)
@@ -55,7 +55,7 @@ canvas.addEventListener("touchstart",jump)
 function update(){
 
 player.y+=player.vy
-player.vy+=0.9
+player.vy+=0.7
 
 if(player.y>=300){
 player.y=300
