@@ -24,9 +24,9 @@ let running=false
 let score=0
 let speed=6
 
-const jumpSound=new Audio("audio/jump.wav")
-const hitSound=new Audio("audio/hit.wav")
-const gameoverSound=new Audio("audio/gameover.wav")
+const jumpSound=new Audio("jump.wav")
+const hitSound=new Audio("hit.wav")
+const gameoverSound=new Audio( "gameover.wav")
 
 const player={x:120,y:300,w:96,h:96,vy:0,jumping:false}
 
